@@ -25,9 +25,9 @@ Lab assignments from a **digital circuits / FPGA** course at NTU(National Taiwan
 | Tool                     | Purpose                                       |
 | ------------------------ | --------------------------------------------- |
 | Quartus II 15.0          | Synthesis, place & route, FPGA programming    |
-| Qsys (Platform Designer) | SoC integration for Avalon bus (Lab 2)        |
+| Qsys (Platform Designer) | SoC integration for Avalon bus and PLL synthesis     |
 | Synopsys VCS             | RTL simulation where testbenches are provided |
-| Python 2/3 + pyserial    | Host-side test scripts (Lab 2)                |
+| Python 2/3 + pyserial    | General helper usage              |
 
 
 Board: **EP4CE115F29C7** on DE2-115, 50 MHz on-board oscillator.
