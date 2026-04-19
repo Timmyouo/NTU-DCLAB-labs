@@ -2,8 +2,18 @@
 
 Lab assignments from a **digital circuits / FPGA** course at NTU, implemented in **SystemVerilog** on the **Terasic DE2-115 (Cyclone IV E)** development board.
 
-> GitHub: [Timmyouo/NTU-DCLAB-labs](https://github.com/Timmyouo/NTU-DCLAB-labs)  
-> Capstone project: [Timmyouo/FPGA-Dart-Game](https://github.com/Timmyouo/FPGA-Dart-Game)
+> GitHub: [Timmyouo/NTU-DCLAB-labs](https://github.com/Timmyouo/NTU-DCLAB-labs)
+
+---
+
+## Capstone Project — FPGA Dart Game
+
+The labs culminated in a **two-player physical dart game** on the DE2-115. Players physically throw an Arduino controller equipped with an **MPU6050 IMU**; the throw motion is captured, transmitted via **Bluetooth (HC-05)**, processed on the FPGA with a custom **physics engine** (fixed-point ballistic integration), and rendered over **VGA** with graphics stored in external **SRAM**.
+
+[![Gameplay demo](https://img.youtube.com/vi/cwpWrTNM2AM/hqdefault.jpg)](https://youtu.be/cwpWrTNM2AM)
+
+**Tech:** SystemVerilog · VGA · External SRAM · UART · Arduino · Python asset pipeline  
+**Repo:** [Timmyouo/FPGA-Dart-Game](https://github.com/Timmyouo/FPGA-Dart-Game)
 
 ---
 
@@ -28,29 +38,4 @@ Lab assignments from a **digital circuits / FPGA** course at NTU, implemented in
 
 Board: **EP4CE115F29C7** on DE2-115, 50 MHz on-board oscillator.
 
----
 
-## Common coding conventions
-
-All modules follow the course-wide **`_r` / `_w` register naming discipline**:
-
-```systemverilog
-always_ff @(posedge i_clk or negedge i_rst_n) begin
-    if (!i_rst_n) reg_r <= '0;
-    else          reg_r <= reg_w;   // reg_w is NEVER driven here
-end
-
-always_comb begin
-    reg_w = reg_r;                  // default hold
-    // ... override based on state
-end
-```
-
-`_r` signals are registers (left-hand side of `always_ff` only).  
-`_w` signals are combinational next-state wires (left-hand side of `always_comb` only).
-
----
-
-## License
-
-Course work — verify your institution's academic integrity policy before making this repository public.
